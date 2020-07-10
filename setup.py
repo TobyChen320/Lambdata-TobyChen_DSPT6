@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Lambdata-TobyChen_DSPT6", # Replace with your own username
+    name="Lambdata-TobyChen_DSPT6",  # Replace with your own username
     version="0.0.1",
     author="Toby Chen",
     author_email="toby-chen@lambdastudents.com",

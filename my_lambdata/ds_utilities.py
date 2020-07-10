@@ -1,3 +1,4 @@
+import numpy as np
 def train_val_test_split(df):
   """
   Function will split the data set into train=80, val=10, test=10.

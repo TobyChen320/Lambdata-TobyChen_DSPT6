@@ -13,4 +13,4 @@ def remove_outliers(df):
   q3 = df.quantile(0.75)
   iqr = q3 - Q1
   df = df[~((df < (q1 - 1.5 * iqr))|(df > (q3 + 1.5 * iqr))).any(axis=1)]
-  return df_o
+  return df

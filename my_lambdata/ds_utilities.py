@@ -35,13 +35,3 @@ def remove_outliers(df):
     iqr = q3 - q1
     df = df[~((df < (q1 - 1.5 * iqr)) | (df > (q3 + 1.5 * iqr))).any(axis=1)]
     return df
-
-
-class Shoe():
-    def __init__(self, color, size, style=None):
-        self.color = color
-        self.size = size
-        self.style = style
-
-if __name__ == "__main__":
-    shoe1 = Shoe(color="Black", size="11")

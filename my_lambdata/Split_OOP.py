@@ -4,5 +4,6 @@ class Shoe():
         self.size = size
         self.style = style
 
+
 if __name__ == "__main__":
     shoe1 = Shoe(color="Black", size="11")

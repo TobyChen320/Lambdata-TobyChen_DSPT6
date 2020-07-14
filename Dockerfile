@@ -16,4 +16,3 @@ RUN apt-get update && \
   apt-get install python3-pip curl -y && \
   pip3 install pipenv
   pipenv install pandas
-  pip3 

@@ -1,6 +1,6 @@
-class My_Data_Splitter():
-    ''' 
-    This class implements a 3-way data split and outputs summary metrics. 
+class MyDataSplitter():
+    '''
+    This class implements a 3-way data split and outputs summary metrics.
     '''
 
     def __init__(self, df, features, target):
@@ -15,7 +15,7 @@ class My_Data_Splitter():
                                     test_size=0.2, random_state=None,
                                     shuffle=True):
         '''
-        This function is a utility wrapper around the Scikit-Learn train_test_split that splits arrays or 
+        This function is a utility wrapper around the Scikit-Learn train_test_split that splits arrays or
         matrices into train, validation, and test subsets.
         Args:
             X (Numpy array or DataFrame): This is a dataframe with features.
@@ -26,13 +26,14 @@ class My_Data_Splitter():
             random_state (int): Controls the shuffling applied to the data before applying the split for reproducibility.
             shuffle (bool): Whether or not to shuffle the data before splitting
         Returns:
-            Train, test, and validation dataframes for features (X) and target (y). 
+            Train, test, and validation dataframes for features (X) and target (y).
         '''
         X_train_val, X_test, y_train_val, y_test = train_test_split(
             self.X, self.y, test_size=test_size, random_state=random_state, shuffle=shuffle)
 
         X_train, X_val, y_train, y_val = train_test_split(
-            X_train_val, y_train_val, test_size=val_size / (train_size + val_size),
+            X_train_val, y_train_val, test_size=val_size /
+            (train_size + val_size),
             random_state=random_state, shuffle=shuffle)
 
         return X_train, X_val, X_test, y_train, y_val, y_test
@@ -55,4 +56,3 @@ class My_Data_Splitter():
         print(f'X_test Shape: {X_test.shape}')
         display(X_test.describe(include='all').transpose())
         print('')
-        

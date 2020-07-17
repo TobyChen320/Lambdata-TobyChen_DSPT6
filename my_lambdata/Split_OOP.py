@@ -16,8 +16,7 @@ class MyDataSplitter():
         self.X = df[features]
         self.y = df[target]
 
-    def train_validation_test_split(self,
-                                    train_size=0.7, val_size=0.1,
+    def train_validation_test_split(self, train_size=0.7, val_size=0.1,
                                     test_size=0.2, random_state=None,
                                     shuffle=True):
         '''
@@ -52,21 +51,19 @@ class MyDataSplitter():
         return X_train, X_val, X_test, y_train, y_val, y_test
 
     def remove_outliers(df):
-    """Summary Line.
-
-    Extended description of function.
-
-    Args:
-      arg1: Function will remove 1.5 IQR outliers from data set.
-
-    Returns:
-      Will return a data set with outliers within the 1.5 IQR range removed.
-    """
-    q1 = df.quantile(0.25)
-    q3 = df.quantile(0.75)
-    iqr = q3 - q1
-    df = df[~((df < (q1 - 1.5 * iqr)) | (df > (q3 + 1.5 * iqr))).any(axis=1)]
-    return df    
+        """Summary Line.
+        Extended description of function.
+        Args:
+        arg1: Function will remove 1.5 IQR outliers from data set.
+        Returns:
+        Will return a data set with outliers within the 1.5 IQR range removed.
+        """
+        q1 = df.quantile(0.25)
+        q3 = df.quantile(0.75)
+        iqr = q3 - q1
+        df = df[~((df < (q1 - 1.5 * iqr)) | (df > (q3 + 1.5 * iqr))).any(
+            axis=1)]
+        return df
 
     def print_split_summary(self, X_train, X_val, X_test):
         '''
@@ -86,3 +83,6 @@ class MyDataSplitter():
         print(f'X_test Shape: {X_test.shape}')
         display(X_test.describe(include='all').transpose())
         print('')
+
+if __name__ == '__main__':
+    

@@ -12,8 +12,7 @@ class TestDsUtilities(unittest.TestCase):
         df[df > 150] *= 10
         current_shape = df.shape[0]
         expected_shape = current_shape - 7
-        splitter = MyDataSplitter(df)
-        remove_df = splitter.remove_outliers(df)
+        remove_df = MyDataSplitter.remove_outliers(df)
         self.assertEqual(expected_shape, remove_df.shape[0])
 
 

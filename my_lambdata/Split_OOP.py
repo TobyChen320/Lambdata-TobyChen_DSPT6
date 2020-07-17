@@ -51,6 +51,23 @@ class MyDataSplitter():
 
         return X_train, X_val, X_test, y_train, y_val, y_test
 
+    def remove_outliers(df):
+    """Summary Line.
+
+    Extended description of function.
+
+    Args:
+      arg1: Function will remove 1.5 IQR outliers from data set.
+
+    Returns:
+      Will return a data set with outliers within the 1.5 IQR range removed.
+    """
+    q1 = df.quantile(0.25)
+    q3 = df.quantile(0.75)
+    iqr = q3 - q1
+    df = df[~((df < (q1 - 1.5 * iqr)) | (df > (q3 + 1.5 * iqr))).any(axis=1)]
+    return df    
+
     def print_split_summary(self, X_train, X_val, X_test):
         '''
         This function prints summary statistics for X_train, X_val, and X_test.

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Lambdata-TobyChen_DSPT6",  # Replace with your own username
-    version="0.0.3",
+    version="0.0.4",
     author="Toby Chen",
     author_email="toby-chen@lambdastudents.com",
     description="A small example package",

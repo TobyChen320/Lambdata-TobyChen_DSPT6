@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from my_lambdata.ds_utilities import MyDataSplitter
+from my_lambdata.split_oop import MyDataSplitter
 
 
 class TestDsUtilities(unittest.TestCase):

@@ -83,6 +83,3 @@ class MyDataSplitter():
         print(f'X_test Shape: {X_test.shape}')
         display(X_test.describe(include='all').transpose())
         print('')
-
-if __name__ == '__main__':
-    
